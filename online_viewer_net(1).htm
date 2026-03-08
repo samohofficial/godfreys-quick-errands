@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godfrey's Quick Errands | Nairobi Errand Services</title>
+<meta name="description" content="Fast and reliable errand, delivery, and shopping services in Nairobi by Godfrey's Quick Errands.">
+<meta name="keywords" content="errand services Nairobi, delivery Nairobi, shopping errands Kenya">
+<meta name="author" content="Godfrey's Quick Errands">
+
+<style>
+:root{
+--blue:#0d47a1;
+--red:#d32f2f;
+--light:#f4f6fa;
+--dark:#121212;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--light);
+transition:0.3s;
+}
+
+/* DARK MODE */
+.dark{
+background:var(--dark);
+color:white;
+}
+
+/* HEADER */
+header{
+background:linear-gradient(90deg,var(--blue),var(--red));
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+animation:float 3s infinite ease-in-out;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+/* NAVIGATION */
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+nav a{
+padding:15px 20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+nav a:hover{
+color:var(--red);
+}
+
+/* HERO */
+.hero{
+height:400px;
+background:url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+animation:fade 2s;
+}
+.hero h1{
+font-size:40px;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+}
+
+/* SERVICES */
+.services{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px;
+}
+.card{
+background:white;
+padding:25px;
+width:250px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* BOOKING FORM */
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+input, textarea{
+padding:12px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+button{
+padding:12px;
+background:var(--blue);
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px;
+}
+.review{
+background:white;
+width:250px;
+padding:20px;
+border-left:5px solid var(--red);
+}
+
+/* MAP */
+iframe{
+width:90%;
+height:300px;
+border:0;
+}
+
+/* FLOAT BUTTONS */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+/* DARK BUTTON */
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+padding:10px;
+cursor:pointer;
+}
+
+/* ANIMATION */
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* FOOTER */
+footer{
+background:black;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙</button>
+
+<header>
+<div class="logo">🚀 GODFREY'S QUICK ERRANDS</div>
+<p>Fast • Reliable • Trusted Errand Services in Nairobi</p>
+</header>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#book">Book</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>We Run Your Errands So You Don't Have To</h1>
+</section>
+
+<section id="services">
+<h2 style="text-align:center;">Our Services</h2>
+<div class="services">
+<div class="card">
+<h3>📦 Delivery</h3>
+<p>Fast delivery of packages and documents.</p>
+</div>
+<div class="card">
+<h3>🛒 Shopping</h3>
+<p>We buy groceries and items for you.</p>
+</div>
+<div class="card">
+<h3>💳 Bill Payments</h3>
+<p>Handle payments quickly and safely.</p>
+</div>
+<div class="card">
+<h3>⚡ Custom Errands</h3>
+<p>Any task you need completed.</p>
+</div>
+</div>
+</section>
+
+<section id="book">
+<h2 style="text-align:center;">Book an Errand</h2>
+<form onsubmit="sendWhatsApp();return false;">
+<input id="name" placeholder="Your Name" required>
+<input id="phone" placeholder="Phone Number" required>
+<textarea id="task" placeholder="Describe your errand"></textarea>
+<button type="submit">Send Booking</button>
+</form>
+</section>
+
+<section id="reviews">
+<h2 style="text-align:center;">Customer Reviews</h2>
+<div class="testimonials">
+<div class="review">
+<p>"Fast and very reliable service!"</p>
+<strong>- James</strong>
+</div>
+<div class="review">
+<p>"Best errand service in Nairobi."</p>
+<strong>- Mary</strong>
+</div>
+<div class="review">
+<p>"Saved me hours of work."</p>
+<strong>- David</strong>
+</div>
+</div>
+</section>
+
+<section id="contact" style="text-align:center;">
+<h2>Contact</h2>
+<p>📞 0708089251</p>
+<p>📧 godfreysamoh@gmail.com</p>
+
+<h3>M-Pesa Payment</h3>
+<button onclick="alert('Send payment via M-Pesa to 0708089251')">Pay with M-Pesa</button>
+</section>
+
+<footer>
+<p>© 2026 GODFREY'S QUICK ERRANDS</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254708089251">💬</a>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("dark")
+}
+
+function sendWhatsApp(){
+var name=document.getElementById("name").value
+var phone=document.getElementById("phone").value
+var task=document.getElementById("task").value
+var message="New Errand Booking:%0AName:"+name+"%0APhone:"+phone+"%0ATask:"+task
+window.open("https://wa.me/254708089251?text="+message)
+}
+</script>
+
+</body>
+</html>
