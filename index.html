@@ -4,92 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Godfrey's Quick Errands</title>
+
 <style>
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f6fa;
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f6fa;
 }
+
 header{
-  background:#0d47a1;
-  color:white;
-  text-align:center;
-  padding:25px;
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:25px;
 }
+
 nav{
-  background:#d32f2f;
-  text-align:center;
+background:#d32f2f;
+text-align:center;
 }
+
 nav a{
-  color:white;
-  text-decoration:none;
-  padding:15px;
-  display:inline-block;
-  font-weight:bold;
+color:white;
+text-decoration:none;
+padding:15px;
+display:inline-block;
+font-weight:bold;
 }
+
 .hero{
-  height:420px;
-  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:36px;
-  text-align:center;
-  padding:20px;
+height:400px;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:34px;
+text-align:center;
 }
+
 .services{
-  padding:40px;
-  text-align:center;
+padding:40px;
+text-align:center;
 }
+
 .service{
-  background:white;
-  display:inline-block;
-  width:230px;
-  margin:15px;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+background:white;
+display:inline-block;
+width:220px;
+margin:15px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
+
 .booking{
-  text-align:center;
-  padding:40px;
+padding:40px;
+text-align:center;
 }
-input, textarea{
-  width:80%;
-  padding:12px;
-  margin:10px;
-  border-radius:5px;
-  border:1px solid #ccc;
-}
+
 .payment{
-  background:white;
-  margin:40px auto;
-  padding:30px;
-  width:80%;
-  max-width:500px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  text-align:center;
+padding:40px;
+text-align:center;
 }
+
+input, textarea{
+width:80%;
+padding:12px;
+margin:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
 button{
-  padding:12px 20px;
-  background:#0d47a1;
-  color:white;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
+padding:12px 20px;
+background:#0d47a1;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
 }
+
 footer{
-  background:black;
-  color:white;
-  text-align:center;
-  padding:15px;
-  margin-top:40px;
+background:black;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -110,47 +116,78 @@ We Run Your Errands So You Don't Have To
 
 <section class="services" id="services">
 <h2>Our Services</h2>
+
 <div class="service">
 <h3>📦 Delivery</h3>
 <p>Fast delivery of packages and documents.</p>
 </div>
+
 <div class="service">
 <h3>🛒 Shopping</h3>
 <p>We shop groceries and items for you.</p>
 </div>
+
 <div class="service">
 <h3>💳 Bill Payments</h3>
 <p>Quick and reliable bill payments.</p>
 </div>
+
 <div class="service">
 <h3>⚡ Custom Errands</h3>
 <p>Any task you need completed.</p>
 </div>
+
 </section>
 
 <section class="booking" id="booking">
+
 <h2>Book an Errand</h2>
-<input id="name" placeholder="Your Name">
-<input id="phone" placeholder="Phone Number">
-<textarea id="task" placeholder="Describe your errand"></textarea>
+
+<form onsubmit="sendBooking(); return false;">
+
+<input id="name" type="text" placeholder="Your Name" required>
+
+<input id="phone" type="tel" placeholder="Phone Number" required>
+
+<textarea id="task" placeholder="Describe your errand" required></textarea>
+
 <br>
-<button onclick="sendBooking()">Send Booking on WhatsApp</button>
+
+<button type="submit">Send Booking on WhatsApp</button>
+
+</form>
+
 </section>
 
 <section class="payment" id="payment">
+
 <h2>Pay with M-Pesa</h2>
+
 <p><b>Step 1:</b> Open M-Pesa</p>
 <p><b>Step 2:</b> Select Lipa na M-Pesa</p>
-<p><b>Step 3:</b> Select Paybill</p>
+<p><b>Step 3:</b> Choose Paybill</p>
+
 <h3>Paybill Number: 247247</h3>
 <h3>Account Number: 1170182079406</h3>
+
 <p>Enter the agreed errand amount.</p>
+
 <hr>
+
 <h3>Confirm Payment</h3>
-<input id="payname" placeholder="Your Name">
-<input id="mpesaCode" placeholder="M-Pesa Transaction Code">
-<button onclick="confirmPayment()">Confirm Payment</button>
+
+<form onsubmit="confirmPayment(); return false;">
+
+<input id="payname" type="text" placeholder="Your Name" required>
+
+<input id="mpesaCode" type="text" placeholder="M-Pesa Transaction Code" required>
+
+<button type="submit">Confirm Payment</button>
+
+</form>
+
 <p id="paymentStatus"></p>
+
 </section>
 
 <footer>
@@ -158,21 +195,33 @@ We Run Your Errands So You Don't Have To
 </footer>
 
 <script>
+
 function sendBooking(){
-  let name=document.getElementById("name").value;
-  let phone=document.getElementById("phone").value;
-  let task=document.getElementById("task").value;
-  let message="New Errand Booking:%0AName:"+name+"%0APhone:"+phone+"%0ATask:"+task;
-  window.open("https://wa.me/254708089251?text="+message);
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let task=document.getElementById("task").value;
+
+let message="New Errand Booking:%0AName:"+name+"%0APhone:"+phone+"%0ATask:"+task;
+
+window.open("https://wa.me/254708089251?text="+message);
+
 }
 
 function confirmPayment(){
-  let name=document.getElementById("payname").value;
-  let code=document.getElementById("mpesaCode").value;
-  document.getElementById("paymentStatus").innerHTML="✅ Payment confirmation sent. We will verify your transaction.";
-  let msg="Payment Confirmation:%0AName:"+name+"%0ATransaction Code:"+code;
-  window.open("https://wa.me/254708089251?text="+msg);
+
+let name=document.getElementById("payname").value;
+let code=document.getElementById("mpesaCode").value;
+
+document.getElementById("paymentStatus").innerHTML =
+"✅ Payment confirmation sent. We will verify your transaction.";
+
+let msg="Payment Confirmation:%0AName:"+name+"%0ATransaction Code:"+code;
+
+window.open("https://wa.me/254708089251?text="+msg);
+
 }
+
 </script>
 
 </body>
