@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -5,92 +6,74 @@
 <title>Godfrey's Quick Errands</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f4f6fa;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f9f9f9;
+    color: #333;
 }
 
-header{
-background:#0d47a1;
-color:white;
-text-align:center;
-padding:25px;
+header {
+    background: #0a1f44;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-nav{
-background:#d32f2f;
-text-align:center;
+header h1 {
+    margin: 0;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-padding:15px;
-display:inline-block;
-font-weight:bold;
+.hero {
+    padding: 40px;
+    text-align: center;
+    background: white;
 }
 
-.hero{
-height:400px;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:34px;
-text-align:center;
+.hero h2 {
+    margin-bottom: 10px;
 }
 
-.services{
-padding:40px;
-text-align:center;
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.service{
-background:white;
-display:inline-block;
-width:220px;
-margin:15px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+.section {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.booking{
-padding:40px;
-text-align:center;
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-.payment{
-padding:40px;
-text-align:center;
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-input, textarea{
-width:80%;
-padding:12px;
-margin:10px;
-border-radius:6px;
-border:1px solid #ccc;
+.pricing {
+    background: #eef2f7;
 }
 
-button{
-padding:12px 20px;
-background:#0d47a1;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
+.testimonials {
+    background: white;
 }
 
-footer{
-background:black;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
+footer {
+    background: #0a1f44;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 </style>
 </head>
@@ -98,130 +81,72 @@ margin-top:40px;
 <body>
 
 <header>
-<h1>🚀 GODFREY'S QUICK ERRANDS</h1>
-<p>Fast • Reliable • Trusted Errand Services</p>
+    <h1>Godfrey's Quick Errands</h1>
+    <p>Fast • Reliable • Affordable</p>
 </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#booking">Book Errand</a>
-<a href="#payment">Payment</a>
-</nav>
-
 <section class="hero">
-We Run Your Errands So You Don't Have To
+    <h2>Fast, Reliable Errand Services</h2>
+    <p>We handle your daily errands so you don’t have to.</p>
+    <a class="btn" href="https://wa.me/254708089251?text=Hi%20I%20need%20an%20errand%20service">Book on WhatsApp</a>
 </section>
 
-<section class="services" id="services">
-<h2>Our Services</h2>
+<section class="section">
+    <h2>Our Services</h2>
+    <div class="services">
 
-<div class="service">
-<h3>📦 Delivery</h3>
-<p>Fast delivery of packages and documents.</p>
-</div>
+        <div class="card">
+            <h3>Delivery Services</h3>
+            <p>We pick up and deliver items quickly and safely.</p>
+        </div>
 
-<div class="service">
-<h3>🛒 Shopping</h3>
-<p>We shop groceries and items for you.</p>
-</div>
+        <div class="card">
+            <h3>Personal Errands</h3>
+            <p>Groceries, documents, or any personal tasks handled for you.</p>
+        </div>
 
-<div class="service">
-<h3>💳 Bill Payments</h3>
-<p>Quick and reliable bill payments.</p>
-</div>
+        <div class="card">
+            <h3>Business Support</h3>
+            <p>Helping businesses with deliveries and small operations.</p>
+        </div>
 
-<div class="service">
-<h3>⚡ Custom Errands</h3>
-<p>Any task you need completed.</p>
-</div>
+        <div class="card">
+            <h3>Custom Requests</h3>
+            <p>Have something unique? We’ll handle it.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section pricing">
+    <h2>Pricing</h2>
+    <p>Short distance: <strong>From KSh 200</strong></p>
+    <p>Medium distance: <strong>KSh 300 – 500</strong></p>
+    <p>Long distance/custom: <strong>Quoted</strong></p>
+</section>
+
+<section class="section testimonials">
+    <h2>What Customers Say</h2>
+
+    <p>"Very fast and reliable service!" – James K.</p>
+    <p>"Saved me so much time!" – Sarah M.</p>
+    <p>"Affordable and professional." – Brian O.</p>
 
 </section>
 
-<section class="booking" id="booking">
+<section class="section">
+    <h2>Contact Us</h2>
+    <p>📞 0708 089 251</p>
+    <p>📧 godfreysamoh@email.com</p>
 
-<h2>Book an Errand</h2>
-
-<form onsubmit="sendBooking(); return false;">
-
-<input id="name" type="text" placeholder="Your Name" required>
-
-<input id="phone" type="tel" placeholder="Phone Number" required>
-
-<textarea id="task" placeholder="Describe your errand" required></textarea>
-
-<br>
-
-<button type="submit">Send Booking on WhatsApp</button>
-
-</form>
-
-</section>
-
-<section class="payment" id="payment">
-
-<h2>Pay with M-Pesa</h2>
-
-<p><b>Step 1:</b> Open M-Pesa</p>
-<p><b>Step 2:</b> Select Lipa na M-Pesa</p>
-<p><b>Step 3:</b> Choose Paybill</p>
-
-<h3>Paybill Number: 247247</h3>
-<h3>Account Number: 1170182079406</h3>
-
-<p>Enter the agreed errand amount.</p>
-
-<hr>
-
-<h3>Confirm Payment</h3>
-
-<form onsubmit="confirmPayment(); return false;">
-
-<input id="payname" type="text" placeholder="Your Name" required>
-
-<input id="mpesaCode" type="text" placeholder="M-Pesa Transaction Code" required>
-
-<button type="submit">Confirm Payment</button>
-
-</form>
-
-<p id="paymentStatus"></p>
-
+    <a class="btn" href="https://wa.me/254708089251?text=Hi%20I%20need%20an%20errand%20service">
+        Chat on WhatsApp
+    </a>
 </section>
 
 <footer>
-<p>© 2026 GODFREY'S QUICK ERRANDS</p>
+    <p>© 2026 Godfrey's Quick Errands</p>
 </footer>
-
-<script>
-
-function sendBooking(){
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let task=document.getElementById("task").value;
-
-let message="New Errand Booking:%0AName:"+name+"%0APhone:"+phone+"%0ATask:"+task;
-
-window.open("https://wa.me/254708089251?text="+message);
-
-}
-
-function confirmPayment(){
-
-let name=document.getElementById("payname").value;
-let code=document.getElementById("mpesaCode").value;
-
-document.getElementById("paymentStatus").innerHTML =
-"✅ Payment confirmation sent. We will verify your transaction.";
-
-let msg="Payment Confirmation:%0AName:"+name+"%0ATransaction Code:"+code;
-
-window.open("https://wa.me/254708089251?text="+msg);
-
-}
-
-</script>
 
 </body>
 </html>
