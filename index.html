@@ -27,51 +27,66 @@ a {
 header {
     background: #0a1f44;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
     font-weight: 600;
+    font-size: 24px;
 }
 
-header p {
-    margin: 5px 0 0;
-    font-size: 16px;
+nav a {
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
+nav a:hover {
+    color: #25D366;
+}
+
+/* Hero Section */
 .hero {
-    padding: 60px 20px;
+    height: 500px;
+    background: url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: #fff;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.4);
 }
 
 .hero h2 {
-    margin-bottom: 15px;
-    font-size: 28px;
+    font-size: 36px;
+    font-weight: 600;
+    z-index: 1;
 }
 
 .hero p {
     font-size: 18px;
+    margin: 15px 0;
+    z-index: 1;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 14px 25px;
-    background: #25D366;
-    color: white;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: 0.3s;
+.hero .btn {
+    z-index: 1;
 }
 
-.btn:hover {
-    background: #128C7E;
-    cursor: pointer;
-}
-
+/* Sections */
 .section {
     padding: 60px 20px;
     text-align: center;
@@ -79,37 +94,57 @@ header p {
 
 h2 {
     margin-bottom: 40px;
-    font-size: 26px;
+    font-size: 28px;
 }
 
+/* Services */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    text-align: center;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
+.card img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Pricing */
 .pricing {
     background: #eef2f7;
 }
 
+/* Testimonials slider */
 .testimonials {
     background: #fff;
+    position: relative;
 }
 
+.testimonial-item {
+    display: none;
+}
+
+.testimonial-item.active {
+    display: block;
+    font-style: italic;
+}
+
+/* Booking Form */
 form input, form textarea {
-    padding: 10px;
+    padding: 12px;
     width: 80%;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -129,6 +164,7 @@ form input[type="submit"]:hover {
     background: #128C7E;
 }
 
+/* Footer */
 footer {
     background: #0a1f44;
     color: white;
@@ -138,6 +174,15 @@ footer {
 
 /* Responsive */
 @media(max-width:600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav a {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
+    }
     .services {
         grid-template-columns: 1fr;
     }
@@ -150,7 +195,12 @@ footer {
 <!-- Header -->
 <header>
     <h1>Godfrey's Quick Errands</h1>
-    <p>Fast • Reliable • Affordable</p>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <!-- Hero Section -->
@@ -161,26 +211,30 @@ footer {
 </section>
 
 <!-- Services Section -->
-<section class="section">
+<section class="section" id="services">
     <h2>Our Services</h2>
     <div class="services">
 
         <div class="card">
+            <img src="delivery.png" alt="Delivery Icon">
             <h3>Delivery Services</h3>
             <p>We pick up and deliver items quickly and safely within Nairobi and surrounding areas.</p>
         </div>
 
         <div class="card">
+            <img src="shopping.png" alt="Shopping Icon">
             <h3>Personal Errands</h3>
             <p>Groceries, documents, or personal tasks handled professionally for you.</p>
         </div>
 
         <div class="card">
+            <img src="business.png" alt="Business Icon">
             <h3>Business Support</h3>
             <p>We assist businesses with deliveries, logistics, and small operational tasks.</p>
         </div>
 
         <div class="card">
+            <img src="custom.png" alt="Custom Icon">
             <h3>Custom Requests</h3>
             <p>Have a unique errand? Contact us and we’ll make it happen.</p>
         </div>
@@ -188,8 +242,14 @@ footer {
     </div>
 </section>
 
+<!-- About Section -->
+<section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Godfrey's Quick Errands is a trusted errands service in Nairobi, providing fast, reliable, and affordable solutions for personal and business needs. Our mission is to save your time while delivering convenience and peace of mind.</p>
+</section>
+
 <!-- Pricing Section -->
-<section class="section pricing">
+<section class="section pricing" id="pricing">
     <h2>Pricing</h2>
     <p>Short distance errands: <strong>From KSh 200</strong></p>
     <p>Medium distance errands: <strong>KSh 300 – 500</strong></p>
@@ -199,9 +259,9 @@ footer {
 <!-- Testimonials Section -->
 <section class="section testimonials">
     <h2>What Our Customers Say</h2>
-    <p>"Very fast and reliable service!" – James K.</p>
-    <p>"Saved me so much time!" – Sarah M.</p>
-    <p>"Affordable and professional." – Brian O.</p>
+    <div class="testimonial-item active">"Very fast and reliable service!" – James K.</div>
+    <div class="testimonial-item">"Saved me so much time!" – Sarah M.</div>
+    <div class="testimonial-item">"Affordable and professional." – Brian O.</div>
 </section>
 
 <!-- Booking Form -->
@@ -217,7 +277,7 @@ footer {
 </section>
 
 <!-- Contact Section -->
-<section class="section">
+<section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>📞 0708 089 251</p>
     <p>📧 godfreysamoh@email.com</p>
@@ -231,6 +291,17 @@ footer {
     <p>© 2026 Godfrey's Quick Errands</p>
 </footer>
 
+<script>
+// Simple testimonial slider
+let testimonials = document.querySelectorAll('.testimonial-item');
+let current = 0;
+
+setInterval(() => {
+    testimonials[current].classList.remove('active');
+    current = (current + 1) % testimonials.length;
+    testimonials[current].classList.add('active');
+}, 4000);
+</script>
+
 </body>
 </html>
-
